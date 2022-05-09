@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            animation: move 5s;
+            animation-name: changeColor;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-fill-mode:backwards;
+           
+        }
+
+        /* @keyframes move {
+            0%{left:0px;}
+            100%{left:300px}
+        } */
+
+        .div1{
+            animation-timing-function: linear;
+        }
+        .div2{
+            animation-timing-function: ease;
+        }
+        .div3{
+            animation-timing-function: ease-in;
+        }
+        .div4{
+            animation-timing-function: ease-out;
+        }
+        .div5{
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes changeColor {
+            0% {
+                background-color: red;
+                width: 200px;
+            }
+
+            25%{
+                background-color: green;
+            }
+
+            50% {
+                background-color: yellow;
+                width: 400px;
+            }
+
+            100% {
+                background-color: blue;
+                width: 100px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+   <div class="box div1">Linear</div>
+   <div class="box div2">Ease</div>
+   <div class="box div3">Ease-in</div>
+   <div class="box div4">Ease-out</div>
+   <div class="box div5">Ease-in-out</div>
+</body>
+
+</html> 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function novoAluno(nome, idade){
+            return {nome,idade}
+        }
+
+        let alunos = [
+            novoAluno('Mario',23),
+            novoAluno('José',45),
+            novoAluno('Marcia',28),
+            novoAluno('João',35)
+
+        ]
+
+        function nomeIdade(aluno){
+            return aluno.nome + ' tem ' + aluno.idade +' anos';
+        }
+
+        console.log(alunos.map(nomeIdade))
+
+
+        function mapa(callback){
+
+            const vetor = []
+            this.forEach(element => {
+                resultado = callback(element)
+
+                vetor.push(resultado)
+            });
+
+            return vetor
+        }
+
+
+        alunos.mapa = mapa;
+
+        console.log(alunos.mapa(nomeIdade))
+    </script>
+</body>
+</html>

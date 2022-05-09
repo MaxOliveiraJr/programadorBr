@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var alunos = {
+            matricula: 12548,
+            nome: "Marcos",
+            telefone:91984860953,
+            cidade: 'Belém'
+        }
+
+        var {nome,matricula,...copia} = alunos;
+
+
+        console.log(copia)
+        console.log(nome)
+        console.log(matricula)
+
+
+        var alunos2 = {
+            matricula:589,
+            nome: "Max",
+            telefone: 125678946,
+            cidade: 'ananideua'
+        }
+
+        var alunosDados = [alunos,alunos2];
+
+        var [marcos, max] = alunosDados;
+
+        console.log(marcos)
+    </script>
+</body>
+</html>

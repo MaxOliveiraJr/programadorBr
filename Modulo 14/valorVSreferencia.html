@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let turmaA = ['Igor','Jose','Paula'];
+
+        // let turmaB = turmaA.slice();
+        let turmaB = [...turmaA];
+
+        turmaB.push('joão');
+
+        let alunoA = {nome: 'Max', idade:15};
+
+        let alunoB = Object.assign({},alunoA);
+
+        alunoB.idade = 25;
+        alunoB.nome = 'Igor';
+
+        alunoC = {nome: 'Carlos', idade:65};
+        alunoD = {...alunoC};
+
+        alunoD.nome = 'Kelly';
+        alunoD.idade = 29;
+    </script>
+</body>
+</html>

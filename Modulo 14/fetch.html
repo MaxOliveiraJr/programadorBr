@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+
+        ul{
+            /* border: 1px solid black; */
+            height: 200px;
+            width: 400px;
+            list-style:none;
+          
+        }
+        li{
+
+            margin: 1px;
+            padding: 10px;
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <form action="">
+        <input type="number" id="valor" min="10000000" required>
+        
+        <button type="button" onclick="verificar()">Verificar</button>
+    </form>
+
+    <div id="resultado">
+
+    </div>
+
+    <script>
+
+
+        function verificar() {
+            let input = document.getElementById("valor");
+            let valor = input.value;
+            console.log(valor)
+            let url = 'https://viacep.com.br/ws/' + valor + '/json/';
+            fetch(url)
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data);
+
+                    let resultado = document.getElementById('resultado')
+                    
+                    resultado.innerHTML =
+                    `<ul>
+                        <li><span>Cep:</span> ${data.cep}</li>
+                        <li><span>Logradouro:</span> ${data.logradouro}</li>
+                        <li><span>Complemento:</span> ${data.complemento}</li>
+                        <li><span>Bairro:</span> ${data.bairro}</li>
+                        <li><span>Localidade:</span> ${data.localidade}</li>
+                    </ul>`
+                })
+
+
+        }
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

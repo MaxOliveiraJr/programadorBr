@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pessoa = {
+            nome: 'Max Rosa de Oliveira Junior',
+            idade: 24
+        }
+        var contato = {
+            telefone: 91984860953,
+            idade: 'maxoliveira.eu@gmail.com'
+        }
+
+        var copia = {
+            ...pessoa,
+            cidade: 'Belém',
+            ...contato
+        }
+
+        copia.idade = 88;
+
+
+        console.log(copia)
+        console.log(pessoa)
+        console.log(contato)
+
+
+
+        var alunosT1 = ['carlos', 'José'];
+
+        var alunosT2 = ['Maria','Lisa'];
+
+        var turma = [
+            ...alunosT1,
+            ...alunosT2
+        ]
+
+        console.log(turma)
+    </script>
+</body>
+</html>

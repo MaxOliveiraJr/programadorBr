@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tela {
+            background-color: beige;
+        }
+
+        #tela2 {
+            background-color: beige;
+        }
+
+        #tela3 {
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="tela" width="500px" height="500px"></canvas>
+    <br>
+    
+    <script>
+
+        tela = document.getElementById('tela')
+
+        ctx = tela.getContext("2d")
+        ctx.beginPath()
+
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = 'red';
+        ctx.moveTo(10,10)
+        ctx.lineTo(400,300)
+        ctx.stroke();
+
+
+        ctx.beginPath()
+
+        ctx.lineWidth = 7;
+        ctx.strokeStyle = 'blue';
+        ctx.fillStyle = 'green';
+        ctx.moveTo(50,10);
+        ctx.lineTo(300,300);
+        ctx.lineTo(200,300);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+    </script>
+</body>
+
+</html>

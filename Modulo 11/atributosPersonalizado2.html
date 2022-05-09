@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="like" src="thumbs-up-xxl.png" alt="">
+
+
+    <ul id="lista" data-num="10">
+
+    </ul>
+
+
+
+    <script>
+        let img = document.getElementById('like');
+
+        img.addEventListener("click", function () {
+                /*img.src = "thumbs-down-xxl.png";*/arguments
+            let lastImg = img.getAttribute("src")
+            img.setAttribute("src", "thumbs-down-xxl.png");
+
+            console.log(lastImg)
+        })
+        
+
+        let lista = document.getElementById("lista");
+
+        lista.dataset.num = "5";
+
+        let num = parseInt(lista.dataset.num);
+
+        let conteudo = '';
+
+        for (let i = 0; i < num; i++) {
+            conteudo += '<li>' + i + '</li>'
+        }
+
+        lista.innerHTML = conteudo
+    </script>
+</body>
+
+</html>

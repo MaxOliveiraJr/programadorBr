@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Título</h1>
+
+    <p meuAtt="Max" class="paragrafo" id="p1">Paragrafo1
+
+
+    </p>
+    <p class="paragrafo">Paragrafo2
+
+        <span style="i">Texto Outro</span>
+    </p>
+    <p>Paragrafo3</p>
+
+    <script>
+        let p = document.getElementById("p1");
+
+        p.innerHTML = "<h2>OI</h2>";
+
+        console.log(p)
+
+        //p.innerText = '<h2>OI</h2>' isso não funciona para inserir um html, mostra como está aparecendo na tela
+
+        //p.textContent = '<h2>OI</h2>'  isso não funciona para inserir um html .... mostra como está no código
+
+        p.className = "GH";
+
+       console.log(p.getAttribute('meuAtt'));
+
+       p.setAttribute("meuAtt","Oliveira");
+       console.log(p.getAttribute('meuAtt'));
+
+       p.setAttribute("meuAtt2","junior");
+       console.log(p.getAttribute('meuAtt2'));
+
+       p.style = 'color:red';
+       p.style.backgroundColor = 'blue';
+    </script>
+</body>
+</html>

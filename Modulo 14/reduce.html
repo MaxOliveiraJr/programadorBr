@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function novoAluno(nome, idade) {
+            return { nome, idade }
+        }
+
+        let alunos = [
+            novoAluno('Mario', 23),
+            novoAluno('José', 45),
+            novoAluno('Marcia', 29),
+            novoAluno('João', 35)
+        ]
+  
+        function idadeDaTurma(total,aluno){
+    
+            return total + aluno.idade;
+
+            
+        }
+
+        // console.log(alunos.reduce(idadeDaTurma , 68))
+
+
+
+        function reduza(callback,vInitial){
+            retorno = vInitial
+            for(let valor of this){
+                retorno = callback(retorno,valor)
+            }
+
+            return retorno 
+        }
+
+        alunos.reduza = reduza;
+
+       alunos.reduza(idadeDaTurma,68);
+
+        console.log(alunos)
+    </script>
+</body>
+
+</html>

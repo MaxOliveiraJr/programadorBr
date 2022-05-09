@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var parar 
+        function atualizarTexto() {
+            let h = document.getElementsByTagName('h1')[0]
+
+            h.innerHTML = Math.floor(Math.random() * 5)
+        }
+
+        function mudarCor() {
+            let h = document.getElementsByTagName('h1')[0]
+
+            h.style.color = "blue"
+        }
+
+        function mudarTexto() {
+            let h = document.getElementsByTagName('h1')[0]
+
+            //h.innerHTML = "Novo titulo"
+
+            //setTimeout(mudarCor,3000)
+
+            parar = setInterval(atualizarTexto, 1000)
+
+        }
+
+        function pararInt(){
+            clearInterval(parar)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Titulo</h1>
+    <input onclick="mudarTexto()" type="submit" value="Mudar">
+    <input onclick="pararInt()" type="submit" value="Parar">
+</body>
+
+</html>

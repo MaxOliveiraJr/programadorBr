@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:focus{
+            color: red;
+        }
+        
+        li:first-child{
+            color: blue;
+        }
+        li:first-of-type{
+            color: blue;
+        }
+
+        li:last-of-type{
+            color: red;
+        }
+        li:nth-child(3n){
+            color: rebeccapurple;
+        }
+        li:nth-child(4n){
+            color: green;
+        }
+
+        li:nth-child(even){
+            background-color: gray;
+        }
+
+        li:nth-child(odd){
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+    </ul>
+</body>
+</html>
