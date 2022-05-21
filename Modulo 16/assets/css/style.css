@@ -19,8 +19,8 @@ body {
 
 .card {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
@@ -69,6 +69,7 @@ body {
 }
 
 #restart {
+  font-family: "Righteous", cursive;
   padding: 20px;
   font-size: 20px;
   background-color: #ffff00;
@@ -81,4 +82,38 @@ body {
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
   gap: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card_back,
+  .card_front {
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  #gameBoard {
+
+    gap: 15px;
+  }
+
+  img{
+    width: 50px;
+  }
+
+  #gameOver{
+    font-size: 23px;
+  }
+
+  #restart {
+    padding: 12px;
+    font-size: 14px;
+    background-color: #ffff00;
+    margin-top: 23px;
+  }
+  
 }
