@@ -1,50 +1,103 @@
+let game = {
 
+    lockMode: false,
+    firstCard: null,
+    secondCard: null,
 
-let board = ['', '', '', '', '', '', '', '', ''];
-let playerTime = 0;
-let symbols = ['o', 'x'];
-let gameOver = false;
-let winStates = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-]
+    setCard: function (id) {
 
-function handleMove(position) {
+        let card = this.cards.filter(card => card.id === id)[0]
 
-    if (board[position] == '') {
-
-        board[position] = symbols[playerTime];
-
-        gameOver = isWin();
-
-        if (!gameOver) {
-            playerTime = (playerTime == 0) ? 1 : 0
+        if (card.flipped || this.lockMode) {
+            return false;
         }
-    }
 
-    return gameOver;
-}
-
-function isWin() {
-
-    for (let i = 0; i < winStates.length; i++) {
-        let seq = winStates[i];
-
-        let pos1 = seq[0]
-        let pos2 = seq[1]
-        let pos3 = seq[2]
-
-        if (board[pos1] == board[pos2] &&
-            board[pos1] == board[pos3] &&
-            board[pos1] != '') {
+        if (!this.firstCard) {
+            this.firstCard = card;
+            this.firstCard.flipped = true;
+            return true;
+        } else {
+            this.secondCard = card;
+            this.lockMode = true;
+            this.secondCard.flipped = true;
             return true;
         }
+    },
+
+    checkMath: function () {
+        return this.firstCard.icon === this.secondCard.icon
+    },
+
+    clearCards: function () {
+        this.firstCard = null;
+        this.secondCard = null;
+        this.lockMode = null;
+    },
+
+    unflipCards: function () {
+
+        this.firstCard.flipped = false
+        this.secondCard.flipped = false
+        game.clearCards()
+    },
+
+    checkGameOver: function() {
+        return this.cards.filter(card=>!card.flipped).length == 0;
+    },
+
+    techs: [
+        'bootstrap',
+        'css',
+        'electron',
+        'firebase',
+        'html',
+        'javascript',
+        'jquery',
+        'mongo',
+        'node',
+        'react'
+    ],
+
+    cards: null,
+
+    createCardFromTechs: function () {
+        this.cards = [];
+
+        this.techs.forEach(tech => {
+            this.cards.push(this.createPairFromTech(tech));
+        });
+
+        this.cards = this.cards.flatMap(pair => pair)
+        this.shuffleCards();
+    },
+
+    createPairFromTech: function (tech) {
+        return [{
+            id: this.createIdWithTech(tech),
+            icon: tech,
+            flipped: false,
+        },
+        {
+            id: this.createIdWithTech(tech),
+            icon: tech,
+            flipped: false
+        }]
+    },
+
+    createIdWithTech: function (tech) {
+        return tech + parseInt(Math.random() * 1000)
+    },
+
+    shuffleCards: function () {
+        let currentIndex = this.cards.length;
+        let randomIndex = 0;
+
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            [this.cards[randomIndex], this.cards[currentIndex]] = [this.cards[currentIndex], this.cards[randomIndex]];
+        }
     }
-    return false;
 }
+
