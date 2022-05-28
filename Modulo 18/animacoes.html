@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #square {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="fObutton">
+        Sumir
+    </button>
+
+    <button id="fIbutton">
+        Aparecer
+    </button>
+
+    <button id="fIbutton3000">
+        Aparecer 3000
+    </button>
+
+    <button id="fIbuttonSlow">
+        Aparecer Slow
+    </button>
+
+    <button id="fIbuttonFast">
+        Aparecer Fast
+    </button>
+    <button id="buttonToogle">
+        Aparecer Toogle
+    </button>
+    <button id="buttonTo">
+        Aparecer To
+    </button>
+    <button id="buttonSlideDown">
+        Aparecer SlideDown
+    </button>
+    <button id="buttonSlideUp">
+        Aparecer SlideUp
+    </button>
+    <button id="buttonAnimate">
+        Aparecer animate
+    </button>
+
+    <button id="stop">
+        Stop
+    </button>
+
+
+    <div id="square">
+
+    </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $("#fObutton").click(() => {
+            $("#square").fadeOut();
+
+        })
+
+        $("#fIbutton").click(() => {
+            $("#square").fadeIn();
+
+        })
+
+        $("#fIbutton3000").click(() => {
+            $("#square").fadeIn(3000);
+
+        })
+
+        $("#fIbuttonSlow").click(() => {
+            $("#square").fadeIn("slow");
+
+        })
+
+
+        $("#fIbuttonFast").click(() => {
+            $("#square").fadeIn("fast");
+
+        })
+
+        $("#buttonToogle").click(() => {
+            $("#square").fadeToggle();
+
+        })
+
+
+        $("#buttonTo").click(() => {
+            $("#square").fadeTo(3000, 0.5);
+
+        })
+
+        $("#buttonSlideDown").click(() => {
+            $("#square").slideDown()
+
+        })
+
+        $("#buttonSlideUp").click(() => {
+            $("#square").slideUp()
+
+        })
+
+        $("#buttonAnimate").click(() => {
+
+            $("#square").animate({
+                opacity: 0.25,
+                left: "+=50",
+                height: "toggle"
+            }, 5000);
+
+        })
+
+
+        $("#stop").click(() => {
+
+            $("#square").stop();
+
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>
