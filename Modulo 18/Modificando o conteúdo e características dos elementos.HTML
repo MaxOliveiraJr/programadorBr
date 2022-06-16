@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Minha lista 1</h1>
+
+    <input type="text" name="novo" id="novo" value="novo item">
+
+    <ul id="lista1">
+        <li class="item1" name="item">item 1</li>
+        <li class="item2" name="item">item 2</li>
+        <li class="item3" name="item">item 3</li>
+        <li class="item4" name="item">item 4</li>
+        <li class="item5" name="item">item 5</li>
+        <li class="item6" name="item">item 6</li>
+    </ul>
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+    //    console.log($("#lista1").html("<p style='background-color:red'>Teste</p>")) //imprimi o HTML
+       console.log($("h1").text("Lista de Compras")) //imprimi o conteúdo da tag
+       console.log($("#novo").val())
+       console.log($("#novo").attr('name','NovoNovo'))
+       console.log($("li").attr('name',function(i,oValue){
+            return 'item'+i+oValue
+       }))
+
+       console.log($("#novo").val('Arroz'))
+       console.log($("#novo").attr("maxlength",5)).attr("type","password");
+
+       
+
+    </script>
+</body>
+</html>

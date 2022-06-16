@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Minha lista 1</h1>
+
+    <input type="text" name="novo" id="novo" value="novo item">
+
+    <ul id="lista1">
+        <li class="item1">item 1</li>
+        <li class="item2">item 2</li>
+        <li class="item3">item 3</li>
+        <li class="item4">item 4</li>
+        <li class="item5">item 5</li>
+        <li class="item6">item 6</li>
+    </ul>
+  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+       console.log($("#lista1").html()) //imprimi o HTML
+       console.log($("#lista1").text()) //imprimi o conteúdo da tag
+       console.log($("#novo").val())
+       console.log($("#novo").attr('name'))
+
+       
+
+    </script>
+</body>
+</html>

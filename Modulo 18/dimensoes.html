@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 500px;
+        background-color: gray;
+        padding: 10px;
+        border: 5px solid black;
+        margin: 15px;
+        color: white;
+        font-size: 20px ;
+        box-sizing: border-box;
+    }
+</style>
+<body>
+    <div class="box">
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        let box = $(".box");
+        box.innerHeight(250)
+        box.width(500)
+        box.innerWidth(600)
+        box.outerWidth(700)
+        box.outerWidth(701,true)
+        box.append("largura: ",box.width(),"<br>",
+                   "largura + padding: ",box.innerWidth(),"<br>",
+                   "largura + padding + borda: ",box.outerWidth(),"<br>",
+                   "largura + padding + borda + margem: ",box.outerWidth(true),"<br>",
+        )
+
+        
+    </script>
+</body>
+</html>

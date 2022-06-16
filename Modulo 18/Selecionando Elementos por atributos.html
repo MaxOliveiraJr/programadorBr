@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .item{
+        margin-bottom: 5px;
+        border-radius: 5px;
+        color: white;
+        padding: 5px;
+        background-color: grey;
+        font-family: sans-serif;
+    }
+</style>
+<body>
+
+    <h1>Minha lista 1</h1>
+    <ul id="lista1">
+        <li data-key=1 class="item">item 1</li>
+        <li data-key=2 class="item">item 2</li>
+        <li data-key=3 class="item">item 3</li>
+        <li data-key=4 class="item">item 4</li>
+        <li data-key=5 class="item">item 5</li>
+        <li data-key=6 class="item">item 6</li>
+    </ul>
+
+    <ul id="lista2">
+        <li data-key=1 class="item">item 1</li>
+        <li data-key=2 class="item">item 2</li>
+        <li data-key=3 class="item">item 3</li>
+        <li data-key=4 class="item">item 4</li>
+        <li data-key=5 class="item">item 5</li>
+        <li data-key=6 class="item">item 6</li>
+    </ul>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+            $("#lista1").find("[data-key = 2]").remove()
+    </script>
+</body>
+</html>

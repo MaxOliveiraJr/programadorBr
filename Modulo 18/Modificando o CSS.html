@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bgblue{
+        background-color: blue;
+    }
+</style>
+<body>
+    <h1 class="titulo">
+        Lista
+    </h1>
+
+    <div class="titulo2">
+        Lista
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $("h1").addClass("bgblue")
+
+        setTimeout(()=>{
+            $("h1").removeClass("bgblue")
+        },2000)
+
+        setInterval(()=>{
+            $(".titulo2").toggleClass("bgblue")
+        },2000)
+
+        $(".titulo2").css("font-size","150px")
+        $(".titulo2").css({"padding":"150px","color":"white"})
+
+    </script>
+</body>
+</html>
