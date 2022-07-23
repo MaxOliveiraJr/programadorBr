@@ -1,0 +1,8 @@
+SSL certificado de segurança
+
+
+Socket Segurity Layer 
+
+É gerado um chave privada e uma chave pública 
+
+A pública é enviada na requisição e o receptores conferem juntos as orgãos verificadores se a chave pública é válida 
